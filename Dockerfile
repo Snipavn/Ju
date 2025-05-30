@@ -86,10 +86,10 @@ EXPOSE 6080
    # ngrok http 6080 
     
 #
-RUN wget 
+RUN wget https://github.com/Snipavn/Ju/raw/refs/heads/main/start.sh
 
 RUN chmod +x start.sh
 
 VOLUME /data
 
-CMD 
+CMD ["start.sh"] 
