@@ -85,13 +85,13 @@ EXPOSE 6080
    # python3 -m http.server 6080 & \
    # ngrok http 6080 
     
-# EOF
+#
 
 # RUN chmod +x /start.sh
 
 VOLUME /data
 
-RUN websockify --web=/novnc 6080 localhost:5900
+RUN websockify --web=/novnc 6080 localhost:5900 &>/dev/null &
 
 CMD python3 -m http.server 6080 && qemu-system-x86_64 \
     -m 16500 \
